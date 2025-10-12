@@ -7,8 +7,11 @@ section .data
 section .text
 global main
 main:
-	PUSH b
-	PUSH a
+	XOR eax, eax
+	MOV al, byte [b]
+	PUSH eax
+	MOV al, byte [a]
+	PUSH eax
 	CALL sumer
 	PUSH eax
 	CALL exit
